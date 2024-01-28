@@ -1,0 +1,33 @@
+<div class="body bg-img">
+    <section>
+        <form (ngSubmit)="!loginForm.invalid && handleLogin()" #loginForm="ngForm">
+            <h1>Login</h1>
+            <div class="inputbox ">
+                <input type="email" name="email" required #email="ngModel" [(ngModel)]="useremail">
+                <label for="Email">Email</label>
+            </div>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <p *ngIf="email.errors?.['required']" class="error-message">
+                    *Email is required
+                </p>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="pass" required #pass="ngModel" [(ngModel)]="userpass">
+                <label for="password">Password</label>
+            </div>
+            <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                <p *ngIf="pass.errors?.['required']" class="error-message">
+                    *Password is required
+                </p>
+            </div>
+            <div class="forget">
+                <label for=""><input type="checkbox">Remember Me</label>
+                <a href="#">Forget Password?</a>
+            </div>
+            <button type="submit">Log in</button>
+            <div class="register">
+                <p>Don't have a account<a href="#"> Register</a></p>
+            </div>
+        </form>
+    </section>
+</div>

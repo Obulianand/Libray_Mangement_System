@@ -1,0 +1,35 @@
+<div class="bg-img">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-10 py-5">
+            <div class="row gx-3 gx-lg-3 row-cols-5 row-cols-md-5 row-cols-xl-5 justify-content-center">
+                <div class="col mb-3" *ngFor=" let book of takenBookData">
+                    <div class="card h-100 card-box-shadow">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h2 class="fw-bolder">{{ book.bookName }}</h2>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <b>{{ book.author }}</b>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn button-87 mt-auto" *ngIf="!book.isTaken"
+                                    (click)="updateStatus(book.id)">Take Book</a>
+                                <a class="btn button-88 mt-auto" *ngIf="book.isTaken"
+                                    (click)="updateStatus(book.id)">Return Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="text-right py-3">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div> -->
+        </div>
+    </div>
+
+</div>

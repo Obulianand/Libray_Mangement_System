@@ -1,0 +1,22 @@
+<nav *ngIf="showNavbar" class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="items">
+        <a class="navbar-brand">Welcome {{userData.name}}</a>
+    </div>
+    <ul class="navbar-nav">
+        <li><a class="nav-link" routerLink="/dashboard">Dashboard</a></li>
+        <li><a class="nav-link" routerLink="/all_books">All Books</a></li>
+        <li><a class="nav-link" routerLink="/available_books">Available Book</a></li>
+        <li><a class="nav-link" routerLink="/return_books">Return Book</a></li>
+    </ul>
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <form class="d-flex input-group w-auto">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i>
+            </span>
+        </form>
+        <li><a routerLink="/login" class="nav-link">Logout</a></li>
+    </ul>
+</nav>
